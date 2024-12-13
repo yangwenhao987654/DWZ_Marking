@@ -38,10 +38,8 @@ namespace DWZ_Scada.Pages.StationPages.OP10
             this.uiButton3 = new Sunny.UI.UIButton();
             this.uiPanel2 = new Sunny.UI.UIPanel();
             this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.uiButton1 = new Sunny.UI.UIButton();
             this.myLogCtrl1 = new DWZ_Scada.ctrls.MyLogCtrl();
             this.uiButton2 = new Sunny.UI.UIButton();
-            this.uiPanel2.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +52,7 @@ namespace DWZ_Scada.Pages.StationPages.OP10
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Size = new System.Drawing.Size(1280, 59);
             this.uiLabel1.TabIndex = 1;
-            this.uiLabel1.Text = "称重检测系统";
+            this.uiLabel1.Text = "激光打标系统";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiLabel1.Click += new System.EventHandler(this.uiLabel1_Click);
             // 
@@ -97,19 +95,6 @@ namespace DWZ_Scada.Pages.StationPages.OP10
             this.uiPanel1.Text = null;
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // uiButton1
-            // 
-            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Location = new System.Drawing.Point(576, 144);
-            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(110, 51);
-            this.uiButton1.TabIndex = 46;
-            this.uiButton1.Text = "测试称重";
-            this.uiButton1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
-            // 
             // myLogCtrl1
             // 
             this.myLogCtrl1.Alignment = System.Windows.Forms.ListViewAlignment.Default;
@@ -144,7 +129,6 @@ namespace DWZ_Scada.Pages.StationPages.OP10
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1280, 750);
             this.Controls.Add(this.uiButton2);
-            this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.uiPanel2);
             this.Controls.Add(this.uiButton3);
             this.Controls.Add(this.uiPanel1);
@@ -156,7 +140,6 @@ namespace DWZ_Scada.Pages.StationPages.OP10
             this.Initialize += new System.EventHandler(this.PageOP10_Initialize);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PageOP10_FormClosing);
             this.Load += new System.EventHandler(this.Page_Load);
-            this.uiPanel2.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -168,7 +151,6 @@ namespace DWZ_Scada.Pages.StationPages.OP10
         private UIButton uiButton3;
         private ctrls.MyLogCtrl myLogCtrl1;
         private UIPanel uiPanel2;
-        private UIButton uiButton1;
         private UIButton uiButton2;
     }
 }

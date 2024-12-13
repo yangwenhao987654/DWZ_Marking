@@ -112,20 +112,16 @@ namespace DWZ_Scada
 
         #region OP10工站参数
 
-        [Permission(3), ReadOnly(false)]
+      /*  [Permission(3), ReadOnly(false)]
         [DisplayName("1.扫码枪串口名称"), Category("1.通讯配置"), Description("扫码枪的Com口")]
-        public string ScannerComName{ get; set; }
+        public string ScannerComName{ get; set; }*/
 
         [Permission(3), ReadOnly(false)]
-        [DisplayName("2.称重器串口名称"), Category("1.通讯配置"), Description("称重器的Com口")]
-        public string WeightComName { get; set; }
-
+        [DisplayName("1.PLC IP地址"), Category("1.通讯配置"), Description("PLC的IP地址")]
+        public string PLCIP { get; set; }
         [Permission(3), ReadOnly(false)]
-        [DisplayName("1.ModbusTCP_IO IP地址"), Category("1.通讯配置"), Description("ModbusIO卡的IP地址")]
-        public string ModbusIP { get; set; }
-        [Permission(3), ReadOnly(false)]
-        [DisplayName("2.ModbusTCP_IO 端口号"), Category("1.通讯配置"), Description("ModbusIO卡的端口号")]
-        public int ModbusPort { get; set; }
+        [DisplayName("2.PLC 端口号"), Category("1.通讯配置"), Description("PLC的端口号")]
+        public int PLCPort { get; set; }
 
 
         [EditorAttribute(typeof(FileNameEditor), typeof(UITypeEditor))]
@@ -165,7 +161,7 @@ namespace DWZ_Scada
         public string OPRule { get; set; }
         #endregion
 
-        #region 视觉图片参数
+   /*     #region 视觉图片参数
 
         [Permission(3), ReadOnly(false)]
         [DisplayName("9.1 是否自动保存OK注释图片"), Category("9.视觉图像配置"), Description("配置是否保存视觉OK注释图像")]
@@ -208,7 +204,7 @@ namespace DWZ_Scada
         [DisplayName("9.1 图片保存时间 单位(天)"), Category("9.视觉图像配置"), Description("配置图像保存时间，达到设定时间后执行自动清理备份图片")]
         public string DeleteTime { get; set; }
 
-        #endregion
+        #endregion*/
 
         /// <summary>
         /// 用户登录事件

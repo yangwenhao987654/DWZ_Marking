@@ -154,6 +154,12 @@
     <Compile Include="CommunicationYwh\Device\TcpDevice1.cs" />
     <Compile Include="CommunicationYwh\Device\TemperatureController485.cs" />
     <Compile Include="CommunicationYwh\Device\WeightController232.cs" />
+    <Compile Include="Core\ProductRule.cs" />
+    <Compile Include="Core\QRCodeGenerator.cs" />
+    <Compile Include="Core\Rule.cs" />
+    <Compile Include="Core\RuleType.cs" />
+    <Compile Include="Core\SerialNumber.cs" />
+    <Compile Include="Core\SerialNumberGenerator.cs" />
     <Compile Include="DAL\DBTool\DatabaseConfig .cs" />
     <Compile Include="DAL\Entity\BarcodeRecordEntity.cs" />
     <Compile Include="DAL\Entity\BarcodeRule.cs" />
@@ -162,6 +168,8 @@
     <Compile Include="DAL\Entity\ProductFormulaEntity.cs" />
     <Compile Include="DAL\Repositories\IRepository.cs" />
     <Compile Include="DAL\Repositories\Repository.cs" />
+    <Compile Include="DAL\Services\RuleService.cs" />
+    <Compile Include="DAL\Services\SerialService.cs" />
     <Compile Include="DAL\Services\UserService.cs" />
     <Compile Include="DAL\Utilities\MyDbContext.cs" />
     <Compile Include="Form1.cs">
@@ -369,7 +377,9 @@
     <None Include="config\Log4Net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DB\MarkingDB.sqlite" />
+    <None Include="DB\MarkingDB.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="MainUI\DB\ScanData.db" />
     <None Include="MainUI\Params\Params-backup.json" />
     <None Include="MainUI\Params\Params.json" />

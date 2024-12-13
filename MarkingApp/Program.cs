@@ -14,6 +14,8 @@ using VisionNet472.DAL.Entity;
 using System.Collections.Generic;
 using VisionNet472.DAL.Repositories;
 using VisionNet472.DAL.Services;
+using MarkingApp.Core;
+using MarkingApp.DAL.Services;
 
 namespace VisionNet472
 {
@@ -107,9 +109,35 @@ namespace VisionNet472
                 int i = db.Insertable(userList).ExecuteCommand();
                 
             }
-/*
-            UserService userService = new UserService();
-            userService.GetAllUsers();*/
+
+            // 创建表（如果不存在）
+            db.CodeFirst.InitTables<ProductRule>();
+            db.CodeFirst.InitTables<Rule>();
+            db.CodeFirst.InitTables<SerialNumber>();
+
+            #region 条码生成测试
+
+            var ruleService = new RuleService();
+
+            // 保存规则
+            var productRule = new ProductRule { ProductName = "TestProduct" };
+            var rules = new List<Rule>
+            {
+                new Rule { Type = RuleType.FixedText, Content = "ABC" },
+                new Rule { Type = RuleType.Date, Content = "yyyyMMdd" },
+                new Rule { Type = RuleType.SerialNumber, SerialLength = 5, IncrementType = SerialIncrementType.Daily }
+            };
+            ruleService.SaveProductRule(productRule, rules);
+
+            // 生成二维码
+            var qrCodeGenerator = new QRCodeGenerator();
+            var qrCode = qrCodeGenerator.GenerateQRCode(productRule.Id);
+
+
+            #endregion
+            /*
+                        UserService userService = new UserService();
+                        userService.GetAllUsers();*/
         }
 
         private static void ConfigureServices(ServiceCollection services)
